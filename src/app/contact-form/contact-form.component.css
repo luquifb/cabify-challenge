@@ -1,0 +1,130 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: lightgray;
+}
+
+.container {
+  text-align: left;
+}
+
+h3 {
+  color: #333;
+  font-size: 30px;
+}
+
+h5 {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #01cab0;
+}
+
+a {
+  text-decoration: none;
+  color: #00cdac;
+}
+
+hr {
+  width: 50px;
+  height: 2px;
+  background-color: #00cdac;
+}
+
+.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.ng-touched.ng-valid {
+  border-color:#00cdac;
+}
+
+.ng-dirty {
+  border-bottom: 5px solid #00cdac;
+}
+
+.form-group {
+  margin: 5px 0;
+}
+
+i.icon {
+  position: absolute;
+  color: lightgray;
+}
+
+.icn {
+  padding: 8px 15px;
+}
+
+.rotate {
+  transform: rotate(30deg);
+}
+
+i sup{
+  color: red;
+}
+
+.form-group input, textarea,
+  .input, select, label {
+  text-indent: 38px;
+}
+
+.form-group .material-icons .icons {
+  position: fixed;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.custom-file-upload > .text-file {
+  text-decoration: none;
+}
+
+.btn {
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: #00cdac;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+}
+
+.error {
+  background-color: red;
+  color: #FFF;
+  border-radius: 0 0 3px 3px;
+  padding: 5px;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.form-group .form-control {
+  display: inline-table;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 2em;
+  color: lightgray;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: orange;
+}

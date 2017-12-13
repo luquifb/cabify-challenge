@@ -1,0 +1,103 @@
+<div class="container">
+    <h3>Contáctanos</h3>
+      <hr align="left">
+      <p>Te recomendamos que visites nuestro <a href="https://inside.cabify.com/" target="_blank">blog</a> y te unas a nuestro grupo de <a href="https://www.facebook.com/cabifyEs/" target="_blank">facebook</a> y <a href="https://twitter.com/cabify_espana" target="_blank">twitter</a>.</p>
+
+    <div class="column">
+      <h5>Llene este formulario</h5>
+        <small class="required">&bull; campos requeridos</small>
+    </div>
+
+  <!-- Form -->
+   <form (ngSubmit)="askMeaQuestion(contactForm)" #contactForm="ngForm" id="contact-form" novalidate>
+
+      <!-- First Contact Block-->
+      <div class="form-group">
+        <i class="material-icons icon icn" id="email-icon">mail_outline<sup>&bull;</sup></i>
+          <input type="email" class="form-control is-valid" id="email" placeholder="Email" name="email" [(ngModel)]="email" #Email="ngModel" required />
+            <div *ngIf="Email.errors && (Email.dirty || Email.touched)">
+              <p class="error" [hidden]="!Email.errors.required">
+                Porfavor ingresa un email válido
+              </p>
+            </div>
+      </div>
+
+      <div class="form-group">
+        <i class="material-icons icon icn" id="name-icon">person<sup>&bull;</sup></i>
+          <input type="text" class="form-control is-valid" name="name" [(ngModel)]="name" placeholder="Nombre" #Name="ngModel" required />
+            <div *ngIf="Name.errors && (Name.dirty || Name.touched)">
+              <p class="error" [hidden]="!Name.errors.required">
+                Porfavor ingresa un nombre
+              </p>
+            </div>
+       </div>
+
+      <div class="form-group">
+        <i class="material-icons icon icn" id="subject-icon">short_text<sup>&bull;</sup></i>
+          <input type="text" class="form-control is-valid" name="subject" [(ngModel)]="subject" placeholder="Asunto" #Subject="ngModel" required />
+            <div *ngIf="Subject.errors && (Subject.dirty || Subject.touched)">
+              <p class="error" [hidden]="!Subject.errors.required">
+                Se requiere un asunto
+              </p>
+            </div>
+       </div>
+
+      <div class="form-group">
+        <i class="material-icons icon icn">chat_bubble_outline<sup>&bull;</sup></i>
+          <textarea rows="3" name="description" class="form-control is-valid" [(ngModel)]="desciption"
+            #Description="ngModel" maxlength="300" form="contact-form" placeholder="Descripción" required></textarea>
+              <div *ngIf="Description.maxlength && (Description.dirty || Description.touched)">
+                <p class="error" [hidden]="!Description.errors.maxlength">
+                  Máximo 300 characteres
+                </p>
+              </div>
+       </div>
+      <!-- End First Contact Block -->
+
+      <!-- Second Contact Block -->
+        <div class="form-group form-control">
+          <i class="material-icons icon">star_rate</i>
+            <p class="input">¿Cómo fue tu experiencia con Cabify?</p>
+              <div class="rating">
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+                <span>☆</span>
+              </div>
+         </div>
+      <!-- End Second Contact Block -->
+
+      <!-- Third Contact Block -->
+        <div class="form-group">
+          <i class="material-icons icon icn">flag</i>
+          <select class="form-control is-valid" id="countries" name="countries" required>
+            <option value="" disabled="true">El país</option>
+            <option *ngFor="let country of countries" [value]="country.alpha2Code">{{country.name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <i class="material-icons icon icn">people<sup>&bull;</sup></i>
+            <input type="text" class="form-control is-valid" name="department" [(ngModel)]="department" placeholder="Departamento" #Department="ngModel" required />
+          <div *ngIf="Department.errors && (Department.dirty || Department.touched)">
+            <p class="error" [hidden]="!Department.errors.required">
+              Porfavor ingrese un departamento
+            </p>
+          </div>
+        </div>
+
+        <div class="form-control">
+          <i class="material-icons icon rotate">attach_file</i>
+            <label for="fileupload" class="custom-file-upload">Agregue un archivo</label>
+              <span class="text-file"> o coloque archivos aquí</span>
+            <input type="file" id="fileupload" multiple>
+        </div>
+
+        <button type="submit" class="btn btn-secondary" (click)="askMeaQuestion(contactForm.value)"> Envía tu pregunta </button>
+      <!-- End Third Contact Block -->
+
+     </form>
+    <!-- End Form -->
+
+</div>
